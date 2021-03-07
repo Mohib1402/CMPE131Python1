@@ -1,7 +1,13 @@
 import time
 
 def calculate_time(function):
-    timebefore = time.time()
-    function()
-    timeafter = time.time()
-    return {timeafter - timebefore}
+    def wrapper():
+        timebefore = time.time()
+        function()
+        timeafter = time.time()
+        print(f"Total time {timeafter - timebefore}")
+    return wrapper
+
+@calculate_time
+def c1():
+    return time.sleep(2)
