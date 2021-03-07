@@ -1,8 +1,9 @@
-def calculate_apr():
+def calculate_apr(principal, interest_rate, years):
+
 	try:
-		principal =float(input("Enter P: "))
-		interest_rate = float(input("Enter I: "))
-		years = int(input("Enter Y: "))
+		principal =float(principal)
+		interest_rate = float(interest_rate)
+		years = int(years)
 		for i in range(years):
 			principal =  principal * (1 + interest_rate)
 			return f'{principal}'
